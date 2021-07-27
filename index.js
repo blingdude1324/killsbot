@@ -56,7 +56,7 @@ client.on('message', (channel, tags, message, self) => {
         client.say(channel, `@${tags.username} The customs rules are as follows... 1) NO PUSSY SHIT! 2) NO CAMPING LOADOUT! 3) NO CUSTOM SHOTGUNS!`);
     }
 
-    if(command === 'sweaty') {
-        client.say(channel, ``);
-    }
+    // if(command === 'sweaty') {
+    //     client.say(channel, ``);
+    // }
 });
