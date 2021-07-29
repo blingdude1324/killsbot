@@ -9,7 +9,7 @@ const client = new tmi.Client({
 	channels: [ 'kiykills', 'jconet' ]
 });
 
-client.connect();
+client.connect().then(console.log("Chat Bot Active"));
 
 client.on('message', (channel, tags, message, self) => {
 	// Ignore echoed messages.
@@ -49,7 +49,7 @@ client.on('message', (channel, tags, message, self) => {
     };
 
     if(command === 'birthday') {
-        client.say(channel, `@${tags.username} Kiy turns 24 on August 13th! Want to get her a birthday present to open on stream? do it here: https://www.amazon.ca/hz/wishlist/ls/1QMBWY1ZOPOYJ?ref_=wl_share`);
+        client.say(channel, `@${tags.username} Kiy turns 24 on August 13th! Want to get her a birthday present to open on stream? do it here: https://www.amazon.com/hz/wishlist/ls/1O31446L894KM/ref=nav_wishlist_lists_1?_encoding=UTF8&type=wishlist`);
     };
 
     if(command === 'customs rules') {
