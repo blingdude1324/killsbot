@@ -35,8 +35,8 @@ client.on('message', (channel, tags, message, self) => {
 
     if(command === 'phd') {
         let min = Math.ceil(1);
-        if(tags['username'] === 
-        let max = Math.floor(12);"jconet") {
+        let max = Math.floor(12);
+        if (tags['username'] === "jconet") {
             size = Math.floor(13);
             client.say(channel, `@${tags.username} has a phd of ${size} inches! UWot`);
         } else if (tags['username'] === "kiykills") {
