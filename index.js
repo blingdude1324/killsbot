@@ -56,7 +56,7 @@ client.on('message', (channel, tags, message, self) => {
         client.say(channel, `@${tags.username} The customs rules are as follows... 1) NO PUSSY SHIT! 2) NO CAMPING LOADOUT! 3) NO CUSTOM SHOTGUNS!`);
     }
 
-    if(command === 'daddy space') {
+    if(command.includes('daddy space')) {
         client.say(channel, `Hell yeah, KillsFam, show some love for BIG DADDY SPACE!!!! On the birthday subathon, provided you hit the goal, Kiy gets to do makeup on Space!!!!`);
     }
 
