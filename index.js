@@ -35,13 +35,16 @@ client.on('message', (channel, tags, message, self) => {
 
     if(command === 'phd') {
         let min = Math.ceil(1);
-        let max = Math.floor(12);
-        if(tags['username'] === "jconet") {
+        if(tags['username'] === 
+        let max = Math.floor(12);"jconet") {
             size = Math.floor(13);
             client.say(channel, `@${tags.username} has a phd of ${size} inches! UWot`);
         } else if (tags['username'] === "kiykills") {
             size = Math.floor(16);   
             client.say(channel, `@${tags.username} has a phd of ${size} inches! UWot Holy... That is the biggest one I have ever seen! <3`);     
+        } else if (tags['username'] === "outinspace11") {
+            size = Math.floor(12);
+            client.say(channel, `Hey there BIG DADDY SPACE! You are still rocking hard with that PHD of ${size} inches my man!`)
         } else {
             size = Math.floor(Math.random() * (max - min + 1)) + min;
             client.say(channel, `@${tags.username} has a phd of ${size} inches! UWot`);
@@ -59,8 +62,4 @@ client.on('message', (channel, tags, message, self) => {
     if(command.includes('daddy space')) {
         client.say(channel, `Hell yeah, KillsFam, show some love for BIG DADDY SPACE!!!! On the birthday subathon, provided you hit the goal, Kiy gets to do makeup on Space!!!!`);
     }
-
-    // if(command === 'sweaty') {
-    //     client.say(channel, ``);
-    // }
 });
