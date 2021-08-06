@@ -52,7 +52,7 @@ client.on('message', (channel, tags, message, self) => {
     };
 
     if(command === 'birthday') {
-        client.say(channel, `@${tags.username} Kiy turns 24 on August 13th! Want to get her a birthday present to open on stream? do it here: https://www.amazon.com/hz/wishlist/ls/1O31446L894KM/ref=nav_wishlist_lists_1?_encoding=UTF8&type=wishlist`);
+        client.say(channel, `@${tags.username} Kiy turns 24 on August 13th! Want to get her a birthday present to open on stream? do it here: [us] https://www.amazon.com/hz/wishlist/ls/1O31446L894KM/ref=nav_wishlist_lists_1?_encoding=UTF8&type=wishlist [ca] https://www.amazon.ca/hz/wishlist/ls/1QMBWY1ZOPOYJ?ref_=wl_share [cosplay] https://www.amazon.ca/hz/wishlist/ls/2UGCQPXRVM4D3?ref_=wl_share`);
     };
 
     if(command === 'customs rules') {
