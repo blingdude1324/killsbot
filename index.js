@@ -48,7 +48,7 @@ client.on('message', (channel, tags, message, self) => {
         } else if (tags['username'] === "hunterISgaming") {
             client.say(channel, `@${tags.username} has a phd of 7.9 inches! UWot`);
         } else if (tags['username'] === "whiteiron883") {
-            client.say(channel, `@${tags.username} has a phd of 8 inches! UWot`);
+            client.say(channel, `@${tags.username} has a phd of 8 inches! Officially the superior Hunter! UWot`);
         } else {
             size = Math.floor(Math.random() * (max - min + 1)) + min;
             client.say(channel, `@${tags.username} has a phd of ${size} inches! UWot`);
