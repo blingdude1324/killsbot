@@ -64,7 +64,7 @@ client.on('message', (channel, tags, message, self) => {
     }
 
     if(command.includes('daddy space')) {
-        client.say(channel, `Hell yeah, KillsFam, show some love for BIG DADDY SPACE!!!! On the birthday subathon, provided you hit the goal, Kiy gets to do makeup on Space!!!!`);
+        client.say(channel, `Hell yeah, KillsFam, show some love for BIG DADDY SPACE!!!!`);
     }
 
     if(command === "help") {
