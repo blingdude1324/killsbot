@@ -70,4 +70,8 @@ client.on('message', (channel, tags, message, self) => {
     if(command === "help") {
         client.say(channel, `@${tags.username} The commands are as follows. hello, rip, phd, yeet, birthday, custom rules, daddy space.`);
     }
+
+    if(command === "hotmic") {
+        client.say(channel, `@${tags.username}, Kiy only does the sexual hotmics! It is what we love about her!`);
+    }
 });
