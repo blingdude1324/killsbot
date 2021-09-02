@@ -78,4 +78,8 @@ client.on('message', (channel, tags, message, self) => {
     if(command === "rbr") {
         client.say(channel, `What is with this pussy ass rat bitch shit?!?!`);
     }
+
+    if(command === "!queue" || command === "queue") {
+        client.say(channel, `@${tags.username}, we are yet to figure out a way to get this command working, please be patient with us as we try to get this implemented ASAP!`);
+    }
 });
