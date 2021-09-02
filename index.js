@@ -74,4 +74,8 @@ client.on('message', (channel, tags, message, self) => {
     if(command === "hotmic") {
         client.say(channel, `@${tags.username}, Kiy only does the sexual hotmics! It is what we love about her!`);
     }
+
+    if(command === "rbr") {
+        client.say(channel, `What is with this pussy ass rat bitch shit?!?!`);
+    }
 });
