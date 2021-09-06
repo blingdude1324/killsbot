@@ -23,10 +23,18 @@ client.on('message', (channel, tags, message, self) => {
 	};
 
     if(command === 'yeet') {
-        let min = Math.ceil(100);
-        let max = Math.floor(1000);
-        let dist = Math.floor(Math.random() * (max - min + 1)) + min;
-        client.say(channel, `@${tags.username}, you just got yeeted ${dist} feet! kiykilLetsgo`);
+        let parameters = message.split(' ').filter(n => n);
+        if (parameters.length==0) {
+            let min = Math.ceil(100);
+            let max = Math.floor(1000);
+            let dist = Math.floor(Math.random() * (max - min + 1)) + min;
+            client.say(channel, `@${tags.username}, you just got yeeted ${dist} feet! kiykilLetsgo`);
+        } else {
+            let min = Math.ceil(100);
+            let max = Math.floor(1000);
+            let dist = Math.floor(Math.random() * (max - min + 1)) + min;
+            client.say(channel, `${parameters[0]}, you just got yeeted ${dist} feet! kiykilLetsgo`);
+        };
     };
 
     if(command === 'rip') {
