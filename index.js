@@ -90,4 +90,13 @@ client.on('message', (channel, tags, message, self) => {
     if(command === "!queue" || command === "queue") {
         client.say(channel, `@${tags.username}, we are yet to figure out a way to get this command working, please be patient with us as we try to get this implemented ASAP!`);
     }
+
+    if(command.includes('mommy kiy')) {
+        if (tags.mod) {
+            client.say(channel, `@${tags.username}, Mommy Kiy is using her big mommy milkers to make me tell you this. YOU ARE GROUNDED FAM!`);
+        } else {
+            client.say(channel, `@${tags.username}, Mommy Kiy is using her big mommy milkers to make me tell you this. YOU ARE GROUNDED FAM!`);
+            client.say(channel, `/timeout @${tags.username} 10`);
+        }
+    }
 });
