@@ -19,7 +19,7 @@ client.on('message', (channel, tags, message, self) => {
 
 	if(command.startsWith('hello') || command.startsWith('hey') || command.startsWith('hi')) {
 		// "@alca, heya!"
-		client.say(channel, `@${tags.username}, hello! How's it going fam?`);
+		client.say(channel, `@${tags.username}, Hey! How's it going?`);
 	};
 
     if(command.startsWith('yeet')) {
