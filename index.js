@@ -93,9 +93,9 @@ client.on('message', (channel, tags, message, self) => {
 
     if(command.includes('mommy kiy')) {
         if (tags.mod) {
-            client.say(channel, `@${tags.username}, Mommy Kiy is using her big mommy milkers to make me tell you this. YOU ARE GROUNDED FAM!`);
+            client.say(channel, `@${tags.username}, Mommy Kiy says... YOU ARE GROUNDED FAM!`);
         } else {
-            client.say(channel, `@${tags.username}, Mommy Kiy is using her big mommy milkers to make me tell you this. YOU ARE GROUNDED FAM!`);
+            client.say(channel, `@${tags.username}, Mommy Kiy says... YOU ARE GROUNDED FAM!`);
             client.say(channel, `/timeout @${tags.username} 10`);
         }
     }
