@@ -24,7 +24,7 @@ client.on('message', (channel, tags, message, self) => {
 
     if(command.startsWith('yeet')) {
         let parameters = message.split(' ').filter(n => n);
-        if (parameters.length==0) {
+        if (!parameters[1]) {
             let min = Math.ceil(100);
             let max = Math.floor(1000);
             let dist = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -33,7 +33,7 @@ client.on('message', (channel, tags, message, self) => {
             let min = Math.ceil(100);
             let max = Math.floor(1000);
             let dist = Math.floor(Math.random() * (max - min + 1)) + min;
-            client.say(channel, `${parameters[0]}, you just got yeeted ${dist} feet! kiykilLetsgo`);
+            client.say(channel, `${parameters[1]}, you just got yeeted ${dist} feet! kiykilLetsgo`);
         };
     };
 
