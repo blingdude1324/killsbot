@@ -22,7 +22,7 @@ client.on('message', (channel, tags, message, self) => {
 		client.say(channel, `@${tags.username}, hello! How's it going fam?`);
 	};
 
-    if(command === 'yeet') {
+    if(command.startsWith('yeet')) {
         let parameters = message.split(' ').filter(n => n);
         if (parameters.length==0) {
             let min = Math.ceil(100);
