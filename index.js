@@ -97,6 +97,6 @@ client.on('message', (channel, tags, message, self) => {
         } else {
             client.say(channel, `@${tags.username}, Mommy Kiy says... YOU ARE GROUNDED FAM!`);
             client.say(channel, `/timeout @${tags.username} 10`);
-        }
+        };
     }
 });
