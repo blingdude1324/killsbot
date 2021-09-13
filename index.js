@@ -4,7 +4,7 @@ const client = new tmi.Client({
 	options: { debug: true },
 	identity: {
 		username: 'killsfamchatbot',
-		password: 'oauth:mff18g79w8ypmypk6f3z8ho4ge83ak'
+		password: process.env.pass
 	},
 	channels: [ 'kiykills', 'jconet' ]
 });
