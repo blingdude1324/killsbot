@@ -102,7 +102,7 @@ client.on('message', (channel, tags, message, self) => {
         };
     }
 
-    if(command.include("thirst") || command.include("thirsty")) {
+    if(command.includes("thirst") || command.includes("thirsty")) {
         client.say(channel, `OH YAAAAH, THIRST ME HARDER DADDY @${tags.username}!!!!`);
     }
 });
