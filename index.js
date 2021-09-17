@@ -15,6 +15,8 @@ client.on('message', (channel, tags, message, self) => {
 	// Ignore echoed messages.
 	if(self) return;
 
+    if(tags['username'] === "streamlabs") return;
+
     let command = message.toLowerCase();
 
 	if(command.startsWith('hello') || command.startsWith('hey') || command.startsWith('hi')) {
