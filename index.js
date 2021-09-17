@@ -107,4 +107,8 @@ client.on('message', (channel, tags, message, self) => {
     if(command.includes("thirst") || command.includes("thirsty")) {
         client.say(channel, `OH YAAAAH, THIRST ME HARDER DADDY @${tags.username}!!!!`);
     }
+
+    if(command === "hayes") {
+        client.say(channel, `@${tags.username}, have you met Hayes? She hype af and completely destroys Hunter in a 1v1.`);
+    }
 });
