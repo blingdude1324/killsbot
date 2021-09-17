@@ -101,4 +101,8 @@ client.on('message', (channel, tags, message, self) => {
             client.say(channel, `/timeout @${tags.username} 10`);
         };
     }
+
+    if(command.include("thirst") || command.include("thirsty")) {
+        client.say(channel, "OH YAAAAH, THIRST ME HARDER DADDY!!!!");
+    }
 });
