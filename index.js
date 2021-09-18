@@ -52,9 +52,6 @@ client.on('message', (channel, tags, message, self) => {
         } else if (tags['username'] === "kiykills") {
             size = Math.floor(16);   
             client.say(channel, `@${tags.username} has a phd of ${size} inches! UWot Holy... That is the biggest one I have ever seen! <3`);     
-        } else if (tags['username'] === "outinspace11") {
-            size = Math.floor(12);
-            client.say(channel, `Hey there BIG DADDY SPACE! You are still rocking hard with that PHD of ${size} inches my man!`)
         } else if (tags['username'] === "hunterisgaming") {
             client.say(channel, `@${tags.username} has a phd of 6 inches! UWot`);
         } else if (tags['username'] === "whiteiron883") {
@@ -73,10 +70,6 @@ client.on('message', (channel, tags, message, self) => {
 
     if(command === 'customs rules') {
         client.say(channel, `@${tags.username} The customs rules are as follows... 1) NO PUSSY SHIT! 2) NO CAMPING LOADOUT! 3) NO CUSTOM SHOTGUNS!`);
-    }
-
-    if(command.includes('daddy space')) {
-        client.say(channel, `Hell yeah, KillsFam, show some love for BIG DADDY SPACE!!!!`);
     }
 
     if(command === "help") {
