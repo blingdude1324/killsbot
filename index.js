@@ -112,4 +112,10 @@ client.on('message', (channel, tags, message, self) => {
         let diffFormatted = formatDistance(now, joined, {includeSeconds: true})
         client.say(channel, `@${tags.username}, Kiy is officially part of Team Xcluded as a Content Creator! She has been a signed member for ${diffFormatted}!!!! Check the other amazing people out here: https://teamxcluded.com/`);
     }
+
+    $joeymessage = Math.floor(Math.random() * 11);
+    $trigger = 8;
+    if(tags.username === "xcludedjoey" && $joeymessage === $trigger) {
+        client.say(channel, `@${tags.username}, How is it hanging you absolute stud?!`);
+    }
 });
