@@ -108,8 +108,8 @@ client.on('message', (channel, tags, message, self) => {
 
     if(command === "team xcluded") {
         let now = new Date();
-        let joined = new Date('2021-09-20T00:40:00');
+        let joined = new Date('2021-09-18T20:00:00');
         let diffFormatted = formatDistance(now, joined, {includeSeconds: true})
-        client.say(channel, `@${tags.username}, Kiy is officially part of Team Xcluded as a Content Creator! She has now been signed for ${diffFormatted}!!!!`);
+        client.say(channel, `@${tags.username}, Kiy is officially part of Team Xcluded as a Content Creator! She has been a signed member publically for ${diffFormatted}!!!! Check the other amazing people out here: https://teamxcluded.com/`);
     }
 });
