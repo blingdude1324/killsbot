@@ -16,8 +16,8 @@ setInterval(function(){
     let now = new Date();
     let joined = new Date('2021-09-18T20:00:00'); // uses UTC for the time hence +8h on estimated time+date.
     let diffFormatted = formatDistance(now, joined, {includeSeconds: true})
-    client.say('kiykills', `Kiy is officially part of Team Xcluded as a Content Creator! She has been a signed member for ${diffFormatted}!!!! Check the other amazing people out here: https://teamxcluded.com/`);
-}, 600000);
+    client.say('kiykills', `Kiy is officially part of Team Xcluded as a Content Creator! She has been a signed member for ${diffFormatted}!!!! Check the other amazing people out here: https://teamxcluded.com`);
+}, 900000);
 
 client.on('message', (channel, tags, message, self) => {
 	// Ignore echoed messages.
