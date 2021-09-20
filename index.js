@@ -120,7 +120,7 @@ client.on('message', (channel, tags, message, self) => {
         client.say(channel, `@${tags.username}, Kiy is officially part of Team Xcluded as a Content Creator! She has been a signed member for ${diffFormatted}!!!! Check the other amazing people out here: https://teamxcluded.com/`);
     }
 
-    $joeymessage = Math.floor(Math.random() * 11);
+    $joeymessage = Math.floor(Math.random() * 10);
     $trigger = 5;
     if(tags.username === "xcludedjoey" && $joeymessage === $trigger) {
         client.say(channel, `@${tags.username}, How are you? Hope you are absolutely having a great day you legend!`);
