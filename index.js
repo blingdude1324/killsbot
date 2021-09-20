@@ -89,7 +89,7 @@ client.on('message', (channel, tags, message, self) => {
         client.say(channel, `@${tags.username}, we are yet to figure out a way to get this command working, please be patient with us as we try to get this implemented ASAP!`);
     }
 
-    if(command.includes('mommy kiy') || command.includes('mami kiy')) {
+    if(command.includes('mommy kiy') || command.includes('mami kiy') || command.includes('moma kiy') || command.includes('momma kiy') || command.includes('mammi kiy')) {
         if (tags.mod) {
             client.say(channel, `@${tags.username}, Mommy Kiy says... YOU ARE GROUNDED FAM!`);
         } else {
