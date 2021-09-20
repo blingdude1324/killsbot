@@ -116,6 +116,6 @@ client.on('message', (channel, tags, message, self) => {
     $joeymessage = Math.floor(Math.random() * 11);
     $trigger = 8;
     if(tags.username === "xcludedjoey" && $joeymessage === $trigger) {
-        client.say(channel, `@${tags.username}, How is it hanging you absolute stud?!`);
+        client.say(channel, `@${tags.username}, How are you? Hope you are absolutely having a great day you legend!`);
     }
 });
