@@ -1,6 +1,6 @@
 {
   "name": "killsbot",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,7 @@
   "author": "JCoDog",
   "license": "ISC",
   "dependencies": {
-    "tmi.js": "^1.8.3"
+    "tmi.js": "^1.8.3",
+    "date-fns": "^2.23.0"
   }
 }

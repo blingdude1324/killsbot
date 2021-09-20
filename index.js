@@ -1,4 +1,5 @@
 const tmi = require('tmi.js');
+var formatDistance = require('date-fns/formatDistance')
 
 const client = new tmi.Client({
 	options: { debug: true },
@@ -88,7 +89,7 @@ client.on('message', (channel, tags, message, self) => {
         client.say(channel, `@${tags.username}, we are yet to figure out a way to get this command working, please be patient with us as we try to get this implemented ASAP!`);
     }
 
-    if(command.includes('mommy kiy')) {
+    if(command.includes('mommy kiy') || command.includes('mami kiy')) {
         if (tags.mod) {
             client.say(channel, `@${tags.username}, Mommy Kiy says... YOU ARE GROUNDED FAM!`);
         } else {
@@ -103,5 +104,12 @@ client.on('message', (channel, tags, message, self) => {
 
     if(command.includes("hayes")) {
         client.say(channel, `@${tags.username}, have you met Hayes? She hype af and completely destroys Hunter in a 1v1.`);
+    }
+
+    if(command === "team xcluded") {
+        let now = new Date();
+        let joined = "19/09/2021";
+        let diffFormatted = formatDistance(now, joined, {includeSeconds: true})
+        client.say(channel, `@${tags.username}, Kiy is officially part of Team Xcluded as a Content Creator! She has now been signed for ${diffFormatted}!!!!`);
     }
 });
