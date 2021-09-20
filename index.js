@@ -115,7 +115,7 @@ client.on('message', (channel, tags, message, self) => {
 
     $joeymessage = Math.floor(Math.random() * 11);
     $triggerthreshold = 3;
-    if(tags.username === "xcludedjoey" && $joeymessage > $triggerthreshold) {
+    if(tags.username === "xcludedjoey" && $joeymessage >= $triggerthreshold) {
         client.say(channel, `@${tags.username}, How are you? Hope you are absolutely having a great day you legend!`);
     }
 });
