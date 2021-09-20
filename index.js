@@ -12,6 +12,13 @@ const client = new tmi.Client({
 
 client.connect().then(console.log("Chat Bot Active"));
 
+setInterval(function(){ 
+    let now = new Date();
+    let joined = new Date('2021-09-18T20:00:00'); // uses UTC for the time hence +8h on estimated time+date.
+    let diffFormatted = formatDistance(now, joined, {includeSeconds: true})
+    client.say('kiykills', `@${tags.username}, Kiy is officially part of Team Xcluded as a Content Creator! She has been a signed member for ${diffFormatted}!!!! Check the other amazing people out here: https://teamxcluded.com/`);
+}, 1800000);
+
 client.on('message', (channel, tags, message, self) => {
 	// Ignore echoed messages.
 	if(self) return;
@@ -114,8 +121,8 @@ client.on('message', (channel, tags, message, self) => {
     }
 
     $joeymessage = Math.floor(Math.random() * 11);
-    $triggerthreshold = 5;
-    if(tags.username === "xcludedjoey" && $joeymessage >= $triggerthreshold) {
+    $trigger = 5;
+    if(tags.username === "xcludedjoey" && $joeymessage === $trigger) {
         client.say(channel, `@${tags.username}, How are you? Hope you are absolutely having a great day you legend!`);
     }
 });
