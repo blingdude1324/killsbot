@@ -7,7 +7,7 @@ const client = new tmi.Client({
 		username: 'killsfamchatbot',
 		password: process.env.pass
 	},
-	channels: [ 'kiykills', 'jconet' ]
+	channels: [ "jconet" ]
 });
 
 client.connect().then(console.log("Chat Bot Active"));
