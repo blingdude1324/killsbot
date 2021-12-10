@@ -34,7 +34,7 @@ client.on('message', async (channel, tags, message, self) => {
   	let args = messageArray.slice(1);
 
 	if (message.startsWith(prefix)) {
-		let command = commands.find(commandName);
+		let command = commands.get(commandName);
     	if (!command) return;
 	
 		try {
@@ -42,13 +42,6 @@ client.on('message', async (channel, tags, message, self) => {
 		} catch (error) {
 			console.error(error);
 			client.say(channel, 'There was an unexpected error in executing that command, please check the bot logs for more information.');
-		}
-
-		if (commandName === 'wet') {
-			let min = Math.ceil(0);
-			let max = Math.floor(100);
-			let percentage = Math.floor(Math.random() * (max - min + 1)) + min;
-			client.say(channel, `${tags.username}, you are ${percentage}% wet!`);
 		}
 	};
 });
