@@ -59,17 +59,4 @@ function getChatters( _attemptCount = 0) {
         uri: `https://tmi.twitch.tv/group/user/${process.env.channel}/chatters`,
         json: true
     })
-    .then(data => {
-        return Object.entries(data.chatters)
-            .reduce((p, [ type, list ]) => p.concat(list.map(name => {
-                if(name === process.env.channel) type = 'broadcaster';
-                return { name, type };
-            })), []);
-    })
-    .catch(err => {
-        if(_attemptCount < 3) {
-            return getChatters( _attemptCount + 1);
-        }
-        throw err;
-    })
-}
+};
