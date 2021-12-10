@@ -23,14 +23,39 @@ for (const file of commandFiles) {
 	client.commands.set(command.data.name, command);
 }
 
+const prefix = process.env.prefix;
+
 client.on('message', (channel, tags, message, self) => {
 	// Ignore echoed messages.
 	if(self) return;
 
     if(tags['username'] === "streamlabs") return;
 
-    let cmd = message.toLowerCase();
-	const command = client.commands.get(cmd.commandName);
+	let messageArray = message.content.split(" ");
+  	let commandName = messageArray[0].slice(useprefix.length).toLowerCase();
+  	let args = messageArray.slice(1);
+
+	if (message.content.startsWith(useprefix)) {
+		let command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+    	if (!command) return;
+
+		if (command.args && !args.length) {
+			let reply = `You didn't provide any arguments!`;
+	
+			if (command.usage) {
+			  reply += `\nThe proper usage would be: \`${useprefix}${command.name} ${command.usage}\``;
+			}
+	
+			return client.say(channel, reply);
+		}
+	
+		try {
+		  command.execute(client, tmi, formatDistance, fs, channel, tags, message, self, messageArray, commandName, args);
+		} catch (error) {
+			console.error(error);
+			client.say(channel, 'There was an unexpected error in executing that command, please check the bot logs for more information.');
+		}
+	};
 
 	if (!command) return;
 
