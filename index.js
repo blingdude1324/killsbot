@@ -36,16 +36,6 @@ client.on('message', async (channel, tags, message, self) => {
 	if (message.startsWith(useprefix)) {
 		let command = commands.get(commandName)
     	if (!command) return;
-
-		if (command.args && !args.length) {
-			let reply = `You didn't provide any arguments!`;
-	
-			if (command.usage) {
-			  reply += `\nThe proper usage would be: \`${useprefix}${command.name} ${command.usage}\``;
-			}
-	
-			return client.say(channel, reply);
-		}
 	
 		try {
 		  command.execute(client, tmi, formatDistance, fs, channel, tags, message, self, messageArray, commandName, args);
