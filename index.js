@@ -13,13 +13,13 @@ const client = new tmi.Client({
 
 client.connect().then(console.log("Chat Bot Active"));
 
-const commands = [];
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+// const commands = [];
+// const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-for (const file of commandFiles) {
-	const command = require(`./commands/${file}`);
-	commands.push(command);
-}
+// for (const file of commandFiles) {
+// 	const command = require(`./commands/${file}`);
+// 	commands.push(command.exports);
+// }
 
 const prefix = process.env.prefix;
 
@@ -34,14 +34,21 @@ client.on('message', async (channel, tags, message, self) => {
   	let args = messageArray.slice(1);
 
 	if (message.startsWith(prefix)) {
-		let command = commands[commandName];
-    	if (!command) return;
+		// let command = commands
+    	// if (!command) return;
 	
-		try {
-		  command.execute(client, tmi, formatDistance, fs, channel, tags, message, self, messageArray, commandName, args);
-		} catch (error) {
-			console.error(error);
-			client.say(channel, 'There was an unexpected error in executing that command, please check the bot logs for more information.');
+		// try {
+		//   command.execute(client, tmi, formatDistance, fs, channel, tags, message, self, messageArray, commandName, args);
+		// } catch (error) {
+		// 	console.error(error);
+		// 	client.say(channel, 'There was an unexpected error in executing that command, please check the bot logs for more information.');
+		// }
+
+		if (commandName === 'wet') {
+			let min = Math.ceil(0);
+			let max = Math.floor(100);
+			let percentage = Math.floor(Math.random() * (max - min + 1)) + min;
+			client.say(channel, `${tags.username}, you are ${percentage}% wet!`);
 		}
 	};
 });
