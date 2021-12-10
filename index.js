@@ -18,6 +18,10 @@ client.connect().then(
 	console.log(`Chatbot online`)
 );
 
+client.on('join', async (channel, username, self) => {
+	client.say("I am now in your chat! I will use any commands you added to me!");
+	console.log(`Bot is ready in channel: ${process.env.channel}`);
+});
 
 const commands = [];
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -52,7 +56,4 @@ client.on('message', async (channel, tags, message, self) => {
 	};
 
 	// give user bal +10 every minute watched
-});
-client.on('join', async (channel, username, self) => {
-	client.host(process.env.userrname, process.env.channel).then(console.log(`now hosting: ${process.env.channel}`));
 });
