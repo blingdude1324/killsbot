@@ -13,7 +13,7 @@ const client = new tmi.Client({
 
 client.connect().then(console.log("Chat Bot Active"));
 
-client.commands = new Collection();
+client.commands = new tmi.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
