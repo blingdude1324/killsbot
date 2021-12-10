@@ -25,7 +25,7 @@ for (const file of commandFiles) {
 
 const prefix = process.env.prefix;
 
-client.on('message', (channel, tags, message, self) => {
+client.on('message', async (channel, tags, message, self) => {
 	// Ignore echoed messages.
 	if(self) return;
 
