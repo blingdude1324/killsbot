@@ -33,8 +33,8 @@ client.on('message', async (channel, tags, message, self) => {
   	let commandName = messageArray[0].slice(prefix.length).toLowerCase();
   	let args = messageArray.slice(1);
 
-	if (message.content.startsWith(useprefix)) {
-		let command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+	if (message.startsWith(useprefix)) {
+		let command = commands.get(commandName)
     	if (!command) return;
 
 		if (command.args && !args.length) {
