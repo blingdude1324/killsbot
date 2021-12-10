@@ -29,8 +29,8 @@ client.on('message', async (channel, tags, message, self) => {
 
     if(tags['username'] === "streamlabs") return;
 
-	let messageArray = message.content.split(" ");
-  	let commandName = messageArray[0].slice(useprefix.length).toLowerCase();
+	let messageArray = message.split(" ");
+  	let commandName = messageArray[0].slice(prefix.length).toLowerCase();
   	let args = messageArray.slice(1);
 
 	if (message.content.startsWith(useprefix)) {
