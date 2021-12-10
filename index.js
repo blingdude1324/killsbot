@@ -34,7 +34,7 @@ client.on('message', async (channel, tags, message, self) => {
   	let args = messageArray.slice(1);
 
 	if (message.startsWith(prefix)) {
-		let command = commands.fine(cmd => cmd.name === commandName);
+		let command = commands.find(cmd => cmd.name === commandName);
     	if (!command) return;
 	
 		try {
