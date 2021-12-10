@@ -3,6 +3,7 @@ var formatDistance = require('date-fns/formatDistance')
 const fs = require('fs');
 
 const rp = require('request-promise');
+const { get } = require('request');
 
 const client = new tmi.Client({
 	options: { debug: true },
@@ -15,7 +16,7 @@ const client = new tmi.Client({
 
 client.connect().then(
 	client.host(process.env.userrname, process.env.channel).then(console.log(`Chatbot online and now hosting: ${process.env.channel}`))
-);
+).then(console.log(getChatters()));
 
 
 const commands = [];
@@ -51,17 +52,24 @@ client.on('message', async (channel, tags, message, self) => {
 	};
 
 	// give user bal +10 every minute watched
+});
 
-	let chatters = rp({
+function getChatters( _attemptCount = 0) {
+    return rp({
         uri: `https://tmi.twitch.tv/group/user/${process.env.channel}/chatters`,
         json: true
-    }).then(data => {
+    })
+    .then(data => {
         return Object.entries(data.chatters)
             .reduce((p, [ type, list ]) => p.concat(list.map(name => {
-                if(name === channelName) type = 'broadcaster';
+                if(name === process.env.channel) type = 'broadcaster';
                 return { name, type };
             })), []);
-    });
-
-	console.log(chatters);
-});
+    })
+    .catch(err => {
+        if(_attemptCount < 3) {
+            return getChatters( _attemptCount + 1);
+        }
+        throw err;
+    })
+}
