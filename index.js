@@ -4,7 +4,7 @@ var formatDistance = require('date-fns/formatDistance')
 const client = new tmi.Client({
 	options: { debug: true },
 	identity: {
-		username: 'killsfamchatbot',
+		username: 'JCoNetChloe',
 		password: process.env.pass
 	},
 	channels: [ "jconet" ]
