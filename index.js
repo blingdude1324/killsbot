@@ -11,8 +11,10 @@ const client = new tmi.Client({
 	channels: [ process.env.channel ]
 });
 
-client.connect().then(console.log("Chat Bot Active"));
-client.host(process.env.userrname, process.env.channel).then(console.log(`Now hosting: ${process.env.channel}`))
+client.connect().then(
+	client.host(process.env.userrname, process.env.channel).then(console.log(`Chatbot online and now hosting: ${process.env.channel}`))
+);
+
 
 const commands = [];
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
