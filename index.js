@@ -15,7 +15,7 @@ const client = new tmi.Client({
 });
 
 client.connect().then(
-	client.host(process.env.userrname, process.env.channel).then(console.log(`Chatbot online and now hosting: ${process.env.channel}`))
+	console.log(`Chatbot online`)
 );
 
 
@@ -53,10 +53,6 @@ client.on('message', async (channel, tags, message, self) => {
 
 	// give user bal +10 every minute watched
 });
-
-function getChatters( _attemptCount = 0) {
-    return rp({
-        uri: `https://tmi.twitch.tv/group/user/${process.env.channel}/chatters`,
-        json: true
-    })
-};
+client.on('join', async (channel, username, self) => {
+	client.host(process.env.userrname, process.env.channel).then(console.log(`now hosting: ${process.env.channel}`));
+});
