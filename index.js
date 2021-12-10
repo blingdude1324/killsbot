@@ -44,12 +44,4 @@ client.on('message', async (channel, tags, message, self) => {
 			client.say(channel, 'There was an unexpected error in executing that command, please check the bot logs for more information.');
 		}
 	};
-
-	if (!command) return;
-
-	try {
-		await command.execute(cmd, tmi, formatDistance, fs, client, channel, tags, message, self);
-	} catch (error) {
-		console.error(error);
-	}
 });
