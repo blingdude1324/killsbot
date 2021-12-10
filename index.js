@@ -5,13 +5,14 @@ const fs = require('fs');
 const client = new tmi.Client({
 	options: { debug: true },
 	identity: {
-		username: 'jconetchloe',
+		username: process.env.username,
 		password: process.env.pass
 	},
-	channels: [ "jconet" ]
+	channels: [ process.env.channel ]
 });
 
 client.connect().then(console.log("Chat Bot Active"));
+client.host(process.env.userrname, process.env.channel).then(console.log(`Now hosting: ${process.env.channel}`))
 
 const commands = [];
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -44,4 +45,6 @@ client.on('message', async (channel, tags, message, self) => {
 			client.say(channel, 'There was an unexpected error in executing that command, please check the bot logs for more information.');
 		}
 	};
+
+	// give user bal +10 every minute watched
 });
