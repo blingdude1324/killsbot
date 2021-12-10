@@ -2,6 +2,8 @@ const tmi = require('tmi.js');
 var formatDistance = require('date-fns/formatDistance')
 const fs = require('fs');
 
+const rp = require('request-promise');
+
 const client = new tmi.Client({
 	options: { debug: true },
 	identity: {
@@ -49,4 +51,17 @@ client.on('message', async (channel, tags, message, self) => {
 	};
 
 	// give user bal +10 every minute watched
+
+	let chatters = rp({
+        uri: `https://tmi.twitch.tv/group/user/${process.env.channel}/chatters`,
+        json: true
+    }).then(data => {
+        return Object.entries(data.chatters)
+            .reduce((p, [ type, list ]) => p.concat(list.map(name => {
+                if(name === channelName) type = 'broadcaster';
+                return { name, type };
+            })), []);
+    });
+
+	console.log(chatters);
 });
