@@ -1,6 +1,6 @@
 {
   "name": "killsbot",
-  "version": "3.3.2",
+  "version": "3.3.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "date-fns": "^2.23.0",
+    "request": "^2.88.2",
     "request-promise": "^4.2.6",
     "tmi.js": "^1.8.3"
   }
