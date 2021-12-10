@@ -18,9 +18,9 @@ client.connect().then(
 	console.log(`Chatbot online`)
 );
 
-client.on('join', async (channel, username, self) => {
+client.once('join', async (channel, username, self) => {
 	client.say(channel, "I am now in your chat! I will use any commands you added to me!");
-	console.log(channel, `Bot is ready in channel: ${channel}`);
+	console.log(`Bot is ready in channel: ${channel}`);
 });
 
 const commands = [];
