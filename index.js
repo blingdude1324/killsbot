@@ -13,14 +13,12 @@ const client = new tmi.Client({
 
 client.connect().then(console.log("Chat Bot Active"));
 
-client.commands = new tmi.Collection();
+const commands = [];
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
-	// Set a new item in the Collection
-	// With the key as the command name and the value as the exported module
-	client.commands.set(command.data.name, command);
+	commands.push(command.data.toJSON());
 }
 
 const prefix = process.env.prefix;
