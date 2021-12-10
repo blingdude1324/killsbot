@@ -16,7 +16,7 @@ const client = new tmi.Client({
 
 client.connect().then(
 	client.host(process.env.userrname, process.env.channel).then(console.log(`Chatbot online and now hosting: ${process.env.channel}`))
-).then(console.log(getChatters()));
+);
 
 
 const commands = [];
