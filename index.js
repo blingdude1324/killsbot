@@ -18,7 +18,7 @@ const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('
 
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
-	commands.push(command.exports.toJSON());
+	commands.push(command.toJSON());
 }
 
 const prefix = process.env.prefix;
