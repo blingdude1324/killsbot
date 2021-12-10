@@ -18,7 +18,7 @@ const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('
 
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
-	commands.push(command.name);
+	commands.push(command.exports.toJSON());
 }
 
 const prefix = process.env.prefix;
@@ -34,7 +34,7 @@ client.on('message', async (channel, tags, message, self) => {
   	let args = messageArray.slice(1);
 
 	if (message.startsWith(prefix)) {
-		let command = commands.get(commandName)
+		let command = commands.filter(s => s.includes(commandName));
     	if (!command) return;
 	
 		try {
